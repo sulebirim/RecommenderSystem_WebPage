@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Big5 Test</title>
+		<meta charset="utf-8">
+
+		<script src="js/angular-1.4.4/angular.min.js"></script>
+		<script src="js/angular-1.4.4/angular-route.js"></script>
+		<script src="js/controllers.js"></script>
+
+
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/test-style.css" rel="stylesheet" type="text/css">
+		<link href="css/pure/buttons.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="ng-scope" ng-app="testApp">
+		<div class="container bg-style ng-cloak" ng-controller="loginCtrl as testApp">
+			<div class="row" >
+				<div class="col-md-offset-4 col-md-4">
+				<div ng-show="!testApp.signedIn()" class="ng-cloak">
+					<div class="panel panel-box">
+						<div class="panel-heading text-center panel-heading-blue">
+							<h3 >Login</h3>
+						</div>
+						<div class="panel-body text-center">
+							<br><br>
+							<form novalidate>
+							    Username
+							    <input data-ng-model="testApp.loginData.username" type="text"><br><br>
+							    Password 	
+							    <input data-ng-model="testApp.loginData.password" type="password">
+							    <br><br>
+							</form>
+
+						    <button type="button" class="pure-button" ng-click="testApp.signIn()">Sign in</button><br><br>			    
+						    <button type="button" class="pure-button" ng-click="testApp.signUp()">Sign up</button><br><br>	
+						</div>
+					</div>
+				</div>
+
+				<div ng-show="testApp.showQuestions()" class="ng-cloak">
+					<div class="panel panel-box">
+					<div class="panel-heading text-center panel-heading-blue">
+						<h3>Big5 Test</h3>
+					</div>
+					<div class="panel-body">
+						<div class="text-center question-text">
+							<h3>I am somwone who... <br><br>{{testApp.currentQuestion.question}}</h3>
+						</div>
+						<div class="opt-questions" >
+							<form role="form">
+							   	<label class="radio">
+								    <input data-ng-model="testApp.currentValue.value" data-ng-value="1" type="radio" name="optradio">Disagree strongly 
+								</label>
+								<label class="radio">
+								    <input data-ng-model="testApp.currentValue.value" data-ng-value="2" type="radio" name="optradio">Disagree a little
+								</label>
+								<label class="radio">
+								    <input data-ng-model="testApp.currentValue.value" data-ng-value="3" type="radio" name="optradio">Neither agree nor disagree
+								</label>
+								<label class="radio">
+								    <input data-ng-model="testApp.currentValue.value" data-ng-value="4" type="radio" name="optradio">Agree a little
+								</label>
+								<label class="radio">
+								    <input data-ng-model="testApp.currentValue.value" data-ng-value="5" type="radio" name="optradio">Agree strongly
+								</label>
+						  	</form>
+						</div>
+						<div class="pager">
+
+						    <button class="pure-button previous" ng-click="testApp.prevQuestion()" ng-show="testApp.hasPrev()">Previous</button>
+						    <button class="pure-button next" ng-click="testApp.nextQuestion()" ng-show="testApp.hasNext()">Next</button>
+
+					  	</div>
+					  	<div class="text-center">
+					  		<button class="pure-button" ng-click="testApp.submitTest()" ng-show="!testApp.hasNext()">Submit</button>
+					  	</div>
+
+					</div>
+				</div>
+
+
+			</div>
+
+				<div ng-show="testApp.showResults()" class="ng-cloak">
+					<div class="panel panel-box">
+						<div class="panel-heading text-center panel-heading-blue">
+							<h3>Big5 Test</h3>
+						</div>
+						<div class="panel-body text-center">
+							<h4>Test results</h4>
+							Extraversion: {{extr}} <br>
+							Agreeableness: {{agr}} <br>
+							Conscientiousness: {{cons}} <br>
+							Neuroticism: {{neur}} <br>
+							Openness: {{opn}} <br>
+						</div>
+					</div>
+				</div>
+				
+				
+		</div>
+			
+			<!--<div class="col-md-12 text-center">Pregunta</div>
+			<div class="row row-animation animated bounceInRight">
+				<div><input type="radio" name="optradio">Option 1</div>
+				<div><input type="radio" name="optradio">Option 1</div>
+				<div><input type="radio" name="optradio">Option 1</div>
+				<span class="prev glyphicon glyphicon-chevron-left"></span>
+				<span class="prev glyphicon glyphicon-chevron-left"></span>
+			</div>-->
+			
+
+			
+		</div>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+	</body>
+
+</html>

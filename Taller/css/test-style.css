@@ -1,0 +1,39 @@
+	.bg-style {
+		margin-top: 50px;
+	}
+
+	.opt-questions {
+		text-align: left;
+		padding-left: 20px;
+		padding-top: 10px;
+		margin: auto;
+    	width: 80%;
+	}
+
+	.panel-box {
+		max-width: 400px;
+		margin: auto;
+		border-color:#660033;
+		box-shadow: 5px 5px 5px #888888;
+	}
+	
+	.panel-box2 {
+		max-width: 900px;
+		margin: auto;
+		border-color:#660033;
+		box-shadow: 5px 5px 5px #888888;
+	}
+
+
+	.panel-heading-blue {
+		background-color: #660033;
+		color: white;
+	}
+
+	.question-text {
+		font-style:bold;
+	}
+
+    .button-success {
+        background: rgb(28, 184, 65); /* this is a green */
+    }

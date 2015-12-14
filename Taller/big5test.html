@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Big5 Test</title>
+		<meta charset="utf-8">
+
+		<script src="js/angular-1.4.4/angular.min.js"></script>
+		<script src="js/controllers.js"></script>
+
+
+		<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/test-style.css" rel="stylesheet" type="text/css">
+		<link href="css/pure/buttons.css" rel="stylesheet" type="text/css">
+	</head>
+	<body class="ng-scope" ng-app="testApp">
+		
+		<div class="container bg-style ng-cloak" ng-controller="questionsCtrl as testApp">
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4">
+					<div class="panel panel-box">
+					<div class="panel-heading text-center panel-heading-blue">
+						<h3>Big5 Test</h3>
+					</div>
+					<div class="panel-body">
+						<div class="text-center question-text">
+							<h3>{{testApp.currentQuestion.question}}</h3>
+						</div>
+						<div class="opt-questions">
+							<form role="form">
+							   	<label class="radio">
+								    <input ng-model="testApp.currentValue.value" data-ng-value="1" type="radio" name="optradio">Muy en desacuerdo 
+								</label>
+								<label class="radio">
+								    <input ng-model="testApp.currentValue.value" data-ng-value="2" type="radio" name="optradio">Desacuerdo
+								</label>
+								<label class="radio">
+								    <input ng-model="testApp.currentValue.value" data-ng-value="3" type="radio" name="optradio">Ni de acuerdo ni en desacuerdo
+								</label>
+								<label class="radio">
+								    <input ng-model="testApp.currentValue.value" data-ng-value="4" type="radio" name="optradio">De acuerdo
+								</label>
+								<label class="radio">
+								    <input ng-model="testApp.currentValue.value" data-ng-value="5" type="radio" name="optradio">Muy de acuerdo
+								</label>
+						  	</form>
+						</div>
+						{{testApp.currentValue}}
+						<div class="pager">
+
+						    <button class="pure-button previous" ng-click="testApp.prevQuestion()" ng-show="testApp.hasPrev()">Anterior</button>
+						    <button class="pure-button next" ng-click="testApp.nextQuestion()" ng-show="testApp.hasNext()">Siguiente</button>
+
+					  	</div>
+					  	<div class="text-center">
+					  		<button class="pure-button" ng-click="testApp.submitTest()" ng-show="!testApp.hasNext()">Enviar</button>
+					  	</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+			
+			<!--<div class="col-md-12 text-center">Pregunta</div>
+			<div class="row row-animation animated bounceInRight">
+				<div><input type="radio" name="optradio">Option 1</div>
+				<div><input type="radio" name="optradio">Option 1</div>
+				<div><input type="radio" name="optradio">Option 1</div>
+				<span class="prev glyphicon glyphicon-chevron-left"></span>
+				<span class="prev glyphicon glyphicon-chevron-left"></span>
+			</div>-->
+			
+
+			
+
+		</div>
+
+		<script src="js/jquery-1.10.2.js"></script>
+		<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+	</body>
+
+</html>
